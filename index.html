@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Website made by Seth Zyair -->
+    <!-- https://github.com/InvalidMythic -->
+    <!-- MIT License Copyright (c) 2024 _dergeist -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Report Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<style>
+    .short-input {
+        width: 300px;
+    }
+
+</style>
+    
+<body class="bg-dark">
+
+<div class="container my-5 p-3 mb-2 bg-gradient-primary text-white text-wrap w-75">
+    
+    <h2 class="text-center mb-4">Medical Report Form</h2>
+    <h5 class="text-center mb-5">Tool By Seth Zyair</h5>
+
+    <!-- Form for Report Generation -->
+    <form id="reportForm" class="bg-dark p-4 rounded shadow-sm border border-white fs-5">
+        
+        <!-- Begin Report -->
+
+        <h4 class="mb-4">Medical Report Details:</h4>
+
+        <!-- Break -->
+
+        <hr class="hr" />
+                
+        <!-- Dispatch -->
+        <div class="mb-3 ">
+            <label for="dispatchInfo" class="form-label">Dispatch</label>
+            <input type="text" class="form-control" id="dispatchInfo" placeholder="[What were you told over dispatch and unit responding]" required>
+        </div>
+
+        <div class="mb-3 w-25">
+            <label for="TimeofCall" class="form-label">Time of Call</label>
+            <input type="text" class="form-control" id="TimeofCall" placeholder="[Time of Call]" required>
+        </div>
+
+        <!-- Chief Complaint -->
+        <div class="mb-4">
+            <label for="chiefComplaint" class="form-label">Chief Complaint</label>
+            <input type="text" class="form-control" id="chiefComplaint" placeholder="[Reason why you were called]" required>
+        </div>
+
+        <!-- Break -->
+
+        <hr class="hr mb-4" />
+
+        <h4 class="mb-5">Scene Assessment:</h4>
+
+        <!-- Arrival On Scene -->
+        <div class="mb-3 row g-3 align-items-center">
+            <div class="col-auto">
+              <label for="firstimpression" class="col-form-label">Arrival On Scene >></label>
+            </div>
+            <div class="w-50">
+                <input type="text" class="form-control" id="arrivalOnScene" placeholder="[What do you observe?]" required>
+            </div>
+        </div>
+
+        <!-- First Impression -->
+
+        <div class="mb-3 row g-3 align-items-center">
+            <div class="col-auto">
+              <label for="firstimpression" class="col-form-label">First Impression >></label>
+            </div>
+            <div class="w-50">
+                <input type="text" class="form-control" id="firstimpression" placeholder="[What type of scene is it?]" required>
+            </div>
+        </div>
+
+        <!-- Patient Postion -->
+        <div class="mb-5 row g-3">
+            <div class="col-auto">
+                <label for="firstimpression" class="col-form-label">Patient Postion >></label>
+            </div>
+            <div class="w-50">
+                <select id="patientPosition" class="form-select mb-3" aria-label="Default select example">
+                    <option selected></option>
+                    <option value="Suspine">[Suspine: Laying On Back]</option>
+                    <option value="Prone">[Prone: Laying on Front]</option>
+                    <option value="Fowlers">[Fowlers: Sitting Upright]</option>
+                    <option value="LeftLR">[Left Leteral Recumbent: Laying Left Side]</option>
+                    <option value="RightLR">[Right Lateral Recumbent: Laying Right Side]</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Break -->
+
+        <hr class="hr mb-4" />
+
+        <h4 class="mb-5">Patient Assessment:</h4>
+
+        <!-- Assessment -->
+        <div class="mb-5">
+            <label for="assessment" class="form-label">Assessment</label>
+            <textarea class="form-control" id="assessment" rows="2" placeholder="[What is the patients injuries, vitals, noticeable abnormalities, ect?]"></textarea>
+        </div>
+
+        <!-- Inital Vital Signs-->
+
+        <div class="row g-3 mb-3 w-50">
+            <label for="PreTransportVitals" class="form-label mb-0">Pre Transport Vital Signs</label>
+            <div class="col-sm">
+                <input type="text" class="form-control" id="PreHR" placeholder="[HR]">
+            </div>
+            <div class="col-sm">
+                <input type="text" class="form-control" id="PreBP" placeholder="[BP]">
+            </div>
+            <div class="col-sm">
+                <input type="text" class="form-control" id="PreSP02" placeholder="[SP02]">
+            </div>
+          </div>
+        
+        <!-- Post Transport Vital Signs-->
+
+        <div class="row g-3 mb-5 w-50">
+            <label for="PostTransportVitals" class="form-label mb-0">Pre Transport Vital Signs</label>
+            <div class="col-sm">
+                <input type="text" class="form-control" id="PostHR" placeholder="[HR]">
+            </div>
+            <div class="col-sm">
+                <input type="text" class="form-control" id="PostBP" placeholder="[BP]">
+            </div>
+            <div class="col-sm">
+                <input type="text" class="form-control" id="PostSP02" placeholder="[SP02]">
+            </div>
+          </div>
+
+        <!-- Rx Treatments -->
+        <div class="mb-3">
+            <label for="treatments" class="form-label">Rx Treatments</label>
+            <textarea class="form-control" id="treatments" rows="2" placeholder="[What did you do?]"></textarea>
+        </div>
+
+        <!-- Patient Hx -->
+        <div class="mb-5">
+            <label for="narrative" class="form-label">Patient Hx</label>
+            <textarea class="form-control" id="patientHx" rows="2" placeholder="[Summary of the response, on scene, and transport]"></textarea>
+        </div>
+
+        <!-- Narrative/Overview -->
+        <div class="mb-5">
+            <label for="narrative" class="form-label">Narrative</label>
+            <textarea class="form-control" id="narrative" rows="3" placeholder="[Summary of the response, on scene, and transport]"></textarea>
+        </div>
+
+        <!-- Transport -->
+        <div class="mb-5 w-50">
+            <label for="transport" class="form-label">Transport</label>
+            <input type="text" class="form-control" id="transport" placeholder="[Enter transport details Ex: Code 3 - Sandy Shores Medical Centre]">
+        </div>
+
+        <!-- Break -->
+
+        <hr class="hr mb-4" />
+
+        <h4 class="mb-5">Signature:</h4>
+
+        <!-- Submitted by and Position -->
+        <div class="mb-3 w-50">
+            <label for="submittedBy" class="form-label">Submitted by</label>
+            <input type="text" class="form-control" id="submittedBy" placeholder="[Enter your name]">
+        </div>
+        <div class="mb-3 w-50">
+            <label for="position" class="form-label">Position</label>
+            <input type="text" class="form-control" id="position" placeholder="[Enter your position Ex: FD-123 | A-EMT]">
+        </div>
+
+        <!-- Date -->
+        <div class="mb-5 w-25">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date">
+        </div>
+
+        <hr class="hr mb-3" />
+
+        <!-- Additional Units on Scene -->
+        <div class="mb-4">
+            <label for="additionalUnits" class="form-label">Additional Units on Scene</label>
+            <input type="text" class="form-control" id="additionalUnits" placeholder="[Enter additional units on scene]">
+        </div>
+
+        <!-- End Report -->
+
+        <hr class="hr mb-4" />
+
+        <!-- Begin update and create report buttons -->
+
+        <button type="button" class="btn btn-primary" onclick="generateReport()">Create Report</button>
+        <button type="button" class="btn btn-warning" id="updateBtn" onclick="updateReport()" style="display: none;">Update Report</button>
+    </form>
+
+    <!-- Display Past Reports -->
+    <h4 class="mt-5">Past Reports</h4>
+    <ul id="pastReports" class="list-group mb-3"></ul>
+
+    <!-- Download All Reports -->
+    <button class="btn btn-success" onclick="downloadAllReports()">Download All Reports as .txt</button>
+</div>
+
+<script>
+
+    let reports = [];
+    let editIndex = -1;
+
+    // Function to generate a report
+    function generateReport() {
+        const report = gatherFormData();
+        reports.push(report);
+        displayPastReports();
+        clearForm();
+    }
+
+    // Function to delete a report
+        function deleteReport(index) {
+        reports.splice(index, 1);
+        displayPastReports();
+    }
+
+    // Function to gather form data into a report object
+    function gatherFormData() {
+        return {
+            dispatch: document.getElementById('dispatchInfo').value,
+            timeofcall: document.getElementById('TimeofCall').value,
+            chiefComplaint: document.getElementById('chiefComplaint').value,
+            arrivalOnScene: document.getElementById('arrivalOnScene').value,
+            firstImpression: document.getElementById('firstimpression').value,
+            patientPosition: document.getElementById('patientPosition').value,
+            assessment: document.getElementById('assessment').value,
+            preHR: document.getElementById('PreHR').value,
+            preBP: document.getElementById('PreBP').value,
+            preSP02: document.getElementById('PreSP02').value,
+            postHR: document.getElementById('PostHR').value,
+            postBP: document.getElementById('PostBP').value,
+            postSP02: document.getElementById('PostSP02').value,
+            treatments: document.getElementById('treatments').value,
+            patienthistory: document.getElementById('patientHx').value,
+            narrative: document.getElementById('narrative').value,
+            transport: document.getElementById('transport').value,
+            submittedBy: document.getElementById('submittedBy').value,
+            position: document.getElementById('position').value,
+            date: document.getElementById('date').value,
+            additionalUnits: document.getElementById('additionalUnits').value,
+        };
+    }
+
+    // Function to display past reports
+    function displayPastReports() {
+        const pastReportsList = document.getElementById('pastReports');
+        pastReportsList.innerHTML = '';
+        reports.forEach((report, index) => {
+            const reportItem = document.createElement('li');
+            reportItem.classList.add('list-group-item');
+            reportItem.innerHTML = `
+                <strong>**Medical Report** #${index + 1}</strong><br>
+                <br>
+                Dispatch: ${report.dispatch}<br>
+                Time of Call: ${report.dispatch}<br>
+                <br>
+                Chief Complaint: ${report.chiefComplaint}<br>
+                <br>
+                Arrival On Scene: ${report.arrivalOnScene}<br>
+                First Impression: ${report.firstImpression}<br>
+                Patient Position: ${report.patientPosition}<br>
+                <br>
+                Assessment: ${report.assessment}<br>
+                <br>
+                Pre Transport Vitals<br>
+                >   HR: ${report.preHR}, BP: ${report.preBP}, SP02: ${report.preSP02}%<br>
+                <br>
+                Post Transport Vitals<br>
+                >   HR: ${report.postHR}, BP: ${report.postBP}, SP02: ${report.postSP02}%<br>
+                <br>
+                Rx Treatments: ${report.treatments}<br>
+                <br>
+                Patient Hx: ${report.patienthistory}<br>
+                <br>
+                Narrative: ${report.narrative}<br>
+                <br>
+                Transport: ${report.transport}<br>
+                <br>
+                Submitted by: ${report.submittedBy}<br>
+                Position: ${report.position}<br>
+                Date: ${report.date}<br>
+                Additional Units on Scene: ${report.additionalUnits}<br>
+                <button class="btn btn-sm btn-warning mt-2" onclick="editReport(${index})">Edit</button>
+                <button class="btn btn-danger btn-sm mt-2" onclick="deleteReport(${index})">Delete</button>
+                `;
+            pastReportsList.appendChild(reportItem);
+        });
+    }
+
+    // Function to edit a report
+    function editReport(index) {
+        editIndex = index;
+        const report = reports[index];
+
+        document.getElementById('dispatchInfo').value = report.dispatch;
+        document.getElementById('TimeofCall').value = report.timeofcall;
+        document.getElementById('chiefComplaint').value = report.chiefComplaint;
+        document.getElementById('arrivalOnScene').value = report.arrivalOnScene;
+        document.getElementById('firstimpression').value = report.firstImpression;
+        document.getElementById('patientPosition').value = report.patientPosition;
+        document.getElementById('assessment').value = report.assessment;
+        document.getElementById('PreHR').value = report.preHR;
+        document.getElementById('PreBP').value = report.preBP;
+        document.getElementById('PreSP02').value = report.preSP02;
+        document.getElementById('PostHR').value = report.postHR;
+        document.getElementById('PostBP').value = report.postBP;
+        document.getElementById('PostSP02').value = report.postSP02;
+        document.getElementById('treatments').value = report.treatments;
+        document.getElementById('patientHx').value = report.patienthistory;
+        document.getElementById('narrative').value = report.narrative;
+        document.getElementById('transport').value = report.transport;
+        document.getElementById('submittedBy').value = report.submittedBy;
+        document.getElementById('position').value = report.position;
+        document.getElementById('date').value = report.date;
+        document.getElementById('additionalUnits').value = report.additionalUnits;
+
+        // Show update button
+        document.getElementById('updateBtn').style.display = 'inline-block';
+    }
+
+    // Function to update a report
+    function updateReport() {
+        const updatedReport = gatherFormData();
+        reports[editIndex] = updatedReport;
+        displayPastReports();
+        clearForm();
+        document.getElementById('updateBtn').style.display = 'none';
+        editIndex = -1;
+    }
+
+    // Function to clear the form after generating/updating a report
+    function clearForm() {
+        // Store values of the fields to keep
+        const dateValue = document.getElementById('date').value;
+        const positionValue = document.getElementById('position').value;
+        const submittedByValue = document.getElementById('submittedBy').value;
+
+        // Reset the entire form
+        document.getElementById('reportForm').reset();
+
+        // Reapply the stored values
+        document.getElementById('date').value = dateValue;
+        document.getElementById('position').value = positionValue;
+        document.getElementById('submittedBy').value = submittedByValue;
+    }
+
+    // Function to download all reports as a .txt file
+    function downloadAllReports() {
+        let text = '';
+        reports.forEach((report, index) => {
+            text += `**Medical Report** #${index + 1}\n\n`;
+
+            text += `Dispatch: ${report.dispatch}\n`;
+            text += `Time of Call: ${report.timeofcall}\n\n`;
+
+            text += `Chief Complaint: ${report.chiefComplaint}\n\n`;
+
+            text += `Arrival On Scene: ${report.arrivalOnScene}\n`;
+            text += `First Impression: ${report.firstImpression}\n`;
+            text += `Patient Position: ${report.patientPosition}\n\n`;
+        
+            text += `Assessment: ${report.assessment}\n\n`;
+        
+            text += `Pre Transport Vitals:\n`;
+            text += `>  HR: ${report.preHR}, BP: ${report.preBP}, SP02: ${report.preSP02}%\n\n`;
+        
+            text += `Post Transport Vitals:\n`;
+            text += `>  HR: ${report.postHR}, BP: ${report.postBP}, SP02: ${report.postSP02}%\n\n`;
+        
+            text += `Rx Treatments: ${report.treatments}\n\n`;
+            text += `Patient Hx: ${report.patienthistory}\n\n`;
+            text += `Narrative: ${report.narrative}\n\n`;
+
+            text += `Transport: ${report.transport}\n\n`;
+        
+            text += `Submitted by: ${report.submittedBy}\n`;
+            text += `Position: ${report.position}\n`;
+            text += `Date: ${report.date}\n`;
+
+            text += `Additional Units on Scene: ${report.additionalUnits}\n\n`;
+            text += `---------------------------------------------\n\n`;
+    });
+
+        const blob = new Blob([text], { type: 'text/plain' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'medical_reports.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+</script>
+
+</body>
+</html>
