@@ -267,34 +267,35 @@
             reportItem.innerHTML = `
                 <strong>**Medical Report** #${index + 1}</strong><br>
                 <br>
-                Dispatch: ${report.dispatch}<br>
+                **Dispatch**: ${report.dispatch}<br>
                 Time of Call: ${report.timeofcall}<br>
                 <br>
-                Chief Complaint: ${report.chiefComplaint}<br>
+                **Chief Complaint**: ${report.chiefComplaint}<br>
                 <br>
-                Arrival On Scene: ${report.arrivalOnScene}<br>
-                First Impression: ${report.firstImpression}<br>
-                Patient Position: ${report.patientPosition}<br>
+                **Arrival On Scene**: ${report.arrivalOnScene}<br>
+                **First Impression**: ${report.firstImpression}<br>
+                **Patient Position**: ${report.patientPosition}<br>
                 <br>
-                Assessment: ${report.assessment}<br>
+                **Assessment**: ${report.assessment}<br>
                 <br>
-                Pre Transport Vitals<br>
-                >   HR: ${report.preHR}, BP: ${report.preBP}, SP02: ${report.preSP02}%<br>
+                *Pre Transport Vitals*<br>
+                >   **HR**: ${report.preHR}, **BP**: ${report.preBP}, **SP02**: ${report.preSP02}%<br>
                 <br>
                 Post Transport Vitals<br>
-                >   HR: ${report.postHR}, BP: ${report.postBP}, SP02: ${report.postSP02}%<br>
+                >   **HR**: ${report.postHR}, **BP**: ${report.postBP}, **SP02**: ${report.postSP02}%<br>
                 <br>
-                Rx Treatments: ${report.treatments}<br>
+                **Rx Treatments**: ${report.treatments}<br>
                 <br>
-                Patient Hx: ${report.patienthistory}<br>
+                **Patient Hx**: ${report.patienthistory}<br>
                 <br>
-                Narrative: ${report.narrative}<br>
+                **Narrative**: ${report.narrative}<br>
                 <br>
-                Transport: ${report.transport}<br>
+                **Transport**: ${report.transport}<br>
                 <br>
                 Submitted by: ${report.submittedBy}<br>
                 Position: ${report.position}<br>
                 Date: ${report.date}<br>
+                <br>
                 Additional Units on Scene: ${report.additionalUnits}<br>
                 <button class="btn btn-sm btn-warning mt-2" onclick="editReport(${index})">Edit</button>
                 <button class="btn btn-danger btn-sm mt-2" onclick="deleteReport(${index})">Delete</button>
@@ -366,32 +367,32 @@
         reports.forEach((report, index) => {
             text += `**Medical Report** #${index + 1}\n\n`;
 
-            text += `Dispatch: ${report.dispatch}\n`;
+            text += `**Dispatch**: ${report.dispatch}\n`;
             text += `Time of Call: ${report.timeofcall}\n\n`;
 
-            text += `Chief Complaint: ${report.chiefComplaint}\n\n`;
+            text += `**Chief Complaint**: ${report.chiefComplaint}\n\n`;
 
-            text += `Arrival On Scene: ${report.arrivalOnScene}\n`;
-            text += `First Impression: ${report.firstImpression}\n`;
-            text += `Patient Position: ${report.patientPosition}\n\n`;
+            text += `**Arrival On Scene**: ${report.arrivalOnScene}\n`;
+            text += `**First Impression**: ${report.firstImpression}\n`;
+            text += `**Patient Position**: ${report.patientPosition}\n\n`;
         
-            text += `Assessment: ${report.assessment}\n\n`;
+            text += `**Assessment**: ${report.assessment}\n\n`;
         
             text += `Pre Transport Vitals:\n`;
-            text += `>  HR: ${report.preHR}, BP: ${report.preBP}, SP02: ${report.preSP02}%\n\n`;
+            text += `>  **HR**: ${report.preHR}, **BP**: ${report.preBP}, **SP02**: ${report.preSP02}%\n\n`;
         
             text += `Post Transport Vitals:\n`;
-            text += `>  HR: ${report.postHR}, BP: ${report.postBP}, SP02: ${report.postSP02}%\n\n`;
+            text += `>  **HR**: ${report.postHR}, **BP**: ${report.postBP}, **SP02**: ${report.postSP02}%\n\n`;
         
-            text += `Rx Treatments: ${report.treatments}\n\n`;
-            text += `Patient Hx: ${report.patienthistory}\n\n`;
-            text += `Narrative: ${report.narrative}\n\n`;
+            text += `**Rx Treatments**: ${report.treatments}\n\n`;
+            text += `**Patient Hx**: ${report.patienthistory}\n\n`;
+            text += `**Narrative**: ${report.narrative}\n\n`;
 
-            text += `Transport: ${report.transport}\n\n`;
+            text += `**Transport**: ${report.transport}\n\n`;
         
             text += `Submitted by: ${report.submittedBy}\n`;
             text += `Position: ${report.position}\n`;
-            text += `Date: ${report.date}\n`;
+            text += `Date: ${report.date}\n\n`;
 
             text += `Additional Units on Scene: ${report.additionalUnits}\n\n`;
             text += `---------------------------------------------\n\n`;
