@@ -12,15 +12,14 @@
 </head>
 
 <style>
-    .short-input {
-        width: 300px;
+    .w-90 {
+        width: 90% !important;
     }
-
 </style>
     
 <body class="bg-dark">
 
-<div class="container my-5 p-3 mb-2 bg-gradient-primary text-white text-wrap w-75">
+<div class="container-fluid my-5 px-4 py-3 bg-gradient-primary text-white text-wrap">
     
     <h2 class="text-center mb-4">Medical Report Form</h2>
     <h5 class="text-center mb-5">Tool By Seth Zyair</h5>
@@ -111,33 +110,65 @@
 
         <!-- Inital Vital Signs-->
 
-        <div class="row g-3 mb-3 w-50">
+        <div class="row g-3 mb-1 w-90">
             <label for="PreTransportVitals" class="form-label mb-0">Pre Transport Vital Signs</label>
-            <div class="col-sm">
+        
+            <div class="col-sm d-flex align-items-center">
+                <label for="PreHR" class="form-label me-2">HR:</label>
                 <input type="text" class="form-control" id="PreHR" placeholder="[HR]">
             </div>
-            <div class="col-sm">
+            
+            <div class="col-sm d-flex align-items-center">
+                <label for="PreBP" class="form-label me-2">BP:</label>
                 <input type="text" class="form-control" id="PreBP" placeholder="[BP]">
             </div>
-            <div class="col-sm">
-                <input type="text" class="form-control" id="PreSP02" placeholder="[SP02]">
+            
+            <div class="col-sm d-flex align-items-center">
+                <label for="PreSP02" class="form-label me-2">SpO2:</label>
+                <input type="text" class="form-control" id="PreSP02" placeholder="[%SPO2]">
             </div>
-          </div>
+        </div>
+        <div class="row g-3 mb-4 w-50">
+            <div class="col-sm d-flex align-items-center">
+                <label for="PreRR" class="form-label me-2">RR:</label>
+                <input type="text" class="form-control" id="PreRR" placeholder="[RR/min]">
+            </div>
+            
+            <div class="col-sm d-flex align-items-center">
+                <label for="PreBGL" class="form-label me-2">BG:</label>
+                <input type="text" class="form-control" id="PreBGL" placeholder="[mg/dL]">
+            </div>
+        </div>
         
         <!-- Post Transport Vital Signs-->
 
-        <div class="row g-3 mb-5 w-50">
+        <div class="row g-3 mb-1 w-90">
             <label for="PostTransportVitals" class="form-label mb-0">Pre Transport Vital Signs</label>
-            <div class="col-sm">
+            <div class="col-sm d-flex align-items-center">
+                <label for="postHR" class="form-label me-2">HR:</label>
                 <input type="text" class="form-control" id="PostHR" placeholder="[HR]">
             </div>
-            <div class="col-sm">
+            <div class="col-sm d-flex align-items-center">
+                <label for="PostBP" class="form-label me-2">BP:</label>
                 <input type="text" class="form-control" id="PostBP" placeholder="[BP]">
             </div>
-            <div class="col-sm">
-                <input type="text" class="form-control" id="PostSP02" placeholder="[SP02]">
+            <div class="col-sm d-flex align-items-center">
+                <label for="PostSP02" class="form-label me-2">SpO2:</label>
+                <input type="text" class="form-control" id="PostSP02" placeholder="[%SP02]">
             </div>
           </div>
+
+        <div class="row g-3 mb-4 w-50">
+            <div class="col-sm d-flex align-items-center">
+                <label for="PostRR" class="form-label me-2">RR:</label>
+                <input type="text" class="form-control" id="PostRR" placeholder="[RR/min]">
+            </div>
+            
+            <div class="col-sm d-flex align-items-center">
+                <label for="PostBGL" class="form-label me-2">BG:</label>
+                <input type="text" class="form-control" id="PostBGL" placeholder="[mg/dL]">
+            </div>
+        </div>
 
         <!-- Rx Treatments -->
         <div class="mb-3">
@@ -243,9 +274,13 @@
             preHR: document.getElementById('PreHR').value,
             preBP: document.getElementById('PreBP').value,
             preSP02: document.getElementById('PreSP02').value,
+            preRR: document.getElementById('PreRR').value,
+            preBGL: document.getElementById('PreBGL').value,
             postHR: document.getElementById('PostHR').value,
             postBP: document.getElementById('PostBP').value,
             postSP02: document.getElementById('PostSP02').value,
+            postRR: document.getElementById('PostRR').value,
+            postBGL: document.getElementById('PostBGL').value,
             treatments: document.getElementById('treatments').value,
             patienthistory: document.getElementById('patientHx').value,
             narrative: document.getElementById('narrative').value,
@@ -280,9 +315,11 @@
                 <br>
                 *Pre Transport Vitals*<br>
                 >   **HR**: ${report.preHR}, **BP**: ${report.preBP}, **SP02**: ${report.preSP02}%<br>
+                >   **RR**: ${report.preRR}, **BG**: ${report.preBGL}<br>
                 <br>
                 Post Transport Vitals<br>
                 >   **HR**: ${report.postHR}, **BP**: ${report.postBP}, **SP02**: ${report.postSP02}%<br>
+                >   **RR**: ${report.postRR}, **BG**: ${report.postBGL}<br>
                 <br>
                 **Rx Treatments**: ${report.treatments}<br>
                 <br>
@@ -319,9 +356,13 @@
         document.getElementById('PreHR').value = report.preHR;
         document.getElementById('PreBP').value = report.preBP;
         document.getElementById('PreSP02').value = report.preSP02;
+        document.getElementById('PreRR').value = report.preRR;
+        document.getElementById('PreBGL').value = report.preBGL;
         document.getElementById('PostHR').value = report.postHR;
         document.getElementById('PostBP').value = report.postBP;
         document.getElementById('PostSP02').value = report.postSP02;
+        document.getElementById('PostRR').value = report.postRR;
+        document.getElementById('PostBGL').value = report.postBGL;
         document.getElementById('treatments').value = report.treatments;
         document.getElementById('patientHx').value = report.patienthistory;
         document.getElementById('narrative').value = report.narrative;
@@ -379,10 +420,12 @@
             text += `**Assessment**: ${report.assessment}\n\n`;
         
             text += `Pre Transport Vitals:\n`;
-            text += `>  **HR**: ${report.preHR}, **BP**: ${report.preBP}, **SP02**: ${report.preSP02}%\n\n`;
-        
+            text += `>  **HR**: ${report.preHR}, **BP**: ${report.preBP}, **SP02**: ${report.preSP02}%\n`;
+            text += `>  **RR**: ${report.preRR}, **BG**: ${report.preBGL}\n\n`;
+
             text += `Post Transport Vitals:\n`;
-            text += `>  **HR**: ${report.postHR}, **BP**: ${report.postBP}, **SP02**: ${report.postSP02}%\n\n`;
+            text += `>  **HR**: ${report.postHR}, **BP**: ${report.postBP}, **SP02**: ${report.postSP02}%\n`;
+            text += `>  **RR**: ${report.postRR}, **BG**: ${report.postBGL}\n\n`;
         
             text += `**Rx Treatments**: ${report.treatments}\n\n`;
             text += `**Patient Hx**: ${report.patienthistory}\n\n`;
